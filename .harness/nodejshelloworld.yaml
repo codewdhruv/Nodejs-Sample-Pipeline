@@ -46,12 +46,16 @@ pipeline:
                     image: node:14
                     shell: Sh
                     command: |-
+                      touch nodejsdockerfile
+                      cat > nodejsdockerfile <<- EOM
                       FROM node:14
                       WORKDIR /nodejshelloworld
                       COPY package*.json index.js ./
                       RUN npm install
                       EXPOSE 3000
                       CMD ["node", "index.js"]
+                      EOM
+                      cat nodejsdockerfile
               - step:
                   type: BuildAndPushDockerRegistry
                   name: build and push an image to docker
