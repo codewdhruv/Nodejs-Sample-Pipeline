@@ -36,13 +36,7 @@ pipeline:
                     image: node:14
                     shell: Sh
                     command: |
-                      ls -lh
-
-                      echo @harness:registry=https://npm.pkg.github.com > .npmrc
-                      echo "//npm.pkg.github.com/:_authToken="$GIT_BOT_TOKEN >> .npmrc
-                      echo always-auth=true >> .npmrc
-
-                      npm
+                      npm install
               - step:
                   type: Run
                   name: create image
