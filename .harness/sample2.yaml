@@ -1,0 +1,44 @@
+inputSet:
+  identifier: "sample2"
+  pipeline:
+    identifier: "nodejshelloworld"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "main"
+    stages:
+    - stage:
+        identifier: "build_test_and_run"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "build_and_push_an_image_to_docker"
+                type: "BuildAndPushDockerRegistry"
+                spec:
+                  connectorRef: "DhrubajyotiDocker"
+                  repo: "dhrubajyotichakraborty/nodejshelloworld"
+    - stage:
+        identifier: "integration_test"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "nodejs_server"
+                type: "Background"
+                spec:
+                  connectorRef: "DhrubajyotiDocker"
+                  image: "dhrubajyotichakraborty/nodejshelloworld"
+            - step:
+                identifier: "test_connection_to_server"
+                type: "Run"
+                spec:
+                  connectorRef: "DhrubajyotiDocker"
+  name: "sample2"
+  orgIdentifier: "default"
+  projectIdentifier: "DhrubaCI"
