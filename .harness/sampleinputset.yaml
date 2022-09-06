@@ -1,5 +1,9 @@
 inputSet:
   identifier: "sampleinputset"
+  name: "sampleinputset"
+  tags: {}
+  orgIdentifier: "default"
+  projectIdentifier: "DhrubaCI"
   pipeline:
     identifier: "nodejshelloworld"
     properties:
@@ -26,19 +30,9 @@ inputSet:
         identifier: "integration_test"
         type: "CI"
         spec:
-          execution:
-            steps:
-            - step:
-                identifier: "test_connection_to_server"
-                type: "Run"
-                spec:
-                  connectorRef: "DhrubajyotiDocker"
           serviceDependencies:
           - identifier: "nodejs_server"
             type: "Service"
             spec:
               connectorRef: "DhrubajyotiDocker"
               image: "dhrubajyotichakraborty/nodejshelloworld"
-  name: "sampleinputset"
-  orgIdentifier: "default"
-  projectIdentifier: "DhrubaCI"
