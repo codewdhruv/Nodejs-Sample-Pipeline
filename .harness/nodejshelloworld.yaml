@@ -85,7 +85,6 @@ pipeline:
                     shell: Sh
                     command: |-
                       sleep 10
-                      npm install express
                       curl localhost:3000
           serviceDependencies:
             - identifier: nodejs_server
