@@ -77,14 +77,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Background
-                  name: nodejs server
-                  identifier: nodejs_server
-                  spec:
-                    connectorRef: <+input>
-                    image: <+input>
-                    shell: Sh
-              - step:
                   type: Run
                   name: test connection to server
                   identifier: test_connection_to_server
@@ -95,3 +87,10 @@ pipeline:
                     command: |-
                       sleep 10
                       curl localhost:3000
+          serviceDependencies:
+            - identifier: nodejs_server
+              name: nodejs server
+              type: Service
+              spec:
+                connectorRef: <+input>
+                image: <+input>
