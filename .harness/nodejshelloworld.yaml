@@ -65,3 +65,33 @@ pipeline:
                     repo: <+input>
                     tags:
                       - latest
+    - stage:
+        name: integration test
+        identifier: integration_test
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: false
+          infrastructure:
+            useFromStage: build_test_and_run
+          execution:
+            steps:
+              - step:
+                  type: Background
+                  name: nodejs server
+                  identifier: nodejs_server
+                  spec:
+                    connectorRef: <+input>
+                    image: <+input>
+                    shell: Sh
+              - step:
+                  type: Run
+                  name: test connection to server
+                  identifier: test_connection_to_server
+                  spec:
+                    connectorRef: <+input>
+                    image: curlimages/curl:7.73.0
+                    shell: Sh
+                    command: |-
+                      sleep 10
+                      curl localhost:3000
