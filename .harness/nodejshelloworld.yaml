@@ -85,7 +85,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       sleep 10
-                      curl --request POST \
+                      curl --request GET \
                           --url http://localhost:8080
 
                       echo "test sucessfull"
