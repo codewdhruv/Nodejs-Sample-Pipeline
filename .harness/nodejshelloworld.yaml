@@ -84,8 +84,8 @@ pipeline:
                     image: curlimages/curl:7.73.0
                     shell: Sh
                     command: |-
-                      netstat -tlpen | grep 8080
-                      curl localhost:8080
+                      sleep 10
+                      curl https://localhost:8080
 
                       echo "test sucessfull"
           serviceDependencies:
