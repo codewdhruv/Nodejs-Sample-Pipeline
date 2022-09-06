@@ -52,7 +52,7 @@ pipeline:
                       WORKDIR /nodejshelloworld
                       COPY package*.json index.js ./
                       RUN npm install
-                      EXPOSE 3000
+                      EXPOSE 8080
                       CMD ["node", "index.js"]
                       EOM
                       cat nodejsdockerfile
@@ -85,7 +85,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       sleep 10
-                      curl localhost:3000
+                      curl localhost:8080
           serviceDependencies:
             - identifier: nodejs_server
               name: nodejs server
