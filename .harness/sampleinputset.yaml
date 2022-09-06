@@ -1,0 +1,44 @@
+inputSet:
+  identifier: "sampleinputset"
+  pipeline:
+    identifier: "nodejshelloworld"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "main"
+    stages:
+    - stage:
+        identifier: "build_test_and_run"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "build_and_push_an_image_to_docker"
+                type: "BuildAndPushDockerRegistry"
+                spec:
+                  connectorRef: "DhrubajyotiDocker"
+                  repo: "dhrubajyotichakraborty/nodejshelloworld"
+    - stage:
+        identifier: "integration_test"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "test_connection_to_server"
+                type: "Run"
+                spec:
+                  connectorRef: "DhrubajyotiDocker"
+          serviceDependencies:
+          - identifier: "nodejs_server"
+            type: "Service"
+            spec:
+              connectorRef: "DhrubajyotiDocker"
+              image: "dhrubajyotichakraborty/nodejshelloworld"
+  name: "sampleinputset"
+  orgIdentifier: "default"
+  projectIdentifier: "DhrubaCI"
