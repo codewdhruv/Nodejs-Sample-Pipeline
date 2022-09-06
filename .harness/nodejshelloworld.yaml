@@ -70,7 +70,7 @@ pipeline:
         identifier: integration_test
         type: CI
         spec:
-          cloneCodebase: true
+          cloneCodebase: false
           infrastructure:
             useFromStage: build_test_and_run
           execution:
