@@ -68,10 +68,9 @@ pipeline:
     - stage:
         name: integration test
         identifier: integration_test
-        description: ""
         type: CI
         spec:
-          cloneCodebase: false
+          cloneCodebase: true
           infrastructure:
             useFromStage: build_test_and_run
           execution:
