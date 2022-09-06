@@ -84,9 +84,10 @@ pipeline:
                     image: curlimages/curl:7.73.0
                     shell: Sh
                     command: |-
-                      node index.js
+                      netstat -tlpen | grep 8080
                       curl localhost:8080
-                      echo "connection sucessfull"
+
+                      echo "test sucessfull"
           serviceDependencies:
             - identifier: nodejs_server
               name: nodejs server
