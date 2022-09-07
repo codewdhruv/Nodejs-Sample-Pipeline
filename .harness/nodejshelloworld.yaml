@@ -76,14 +76,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Background
-                  name: nodejs server
-                  identifier: nodejs_server
-                  spec:
-                    connectorRef: <+input>
-                    image: <+input>
-                    shell: Sh
-              - step:
                   type: Run
                   name: test connection to server
                   identifier: test_connection_to_server
@@ -97,3 +89,10 @@ pipeline:
                           --url http://localhost:8080
 
                       echo "test sucessfull"
+          serviceDependencies:
+            - identifier: nodejs_server
+              name: nodejs server
+              type: Service
+              spec:
+                connectorRef: <+input>
+                image: <+input>
