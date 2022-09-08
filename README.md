@@ -21,3 +21,12 @@ This sample doesn’t include configuration options, for in depth steps and conf
 Here we have build a simple, two-stage CI Pipeline in Harness. Setting up and running the Pipeline will take about 30 minutes.
 The Pipeline will build and run a unit test on a sample nodejs repository, upload the artifact to Docker Hub, and then run integration tests.
 You can use publicly-available code, images, and your Github and Docker Hub accounts.
+
+## Workflow
+
+- Use a Kubernetes cluster build farm.
+- Build the code and run unit tests in the build farm.
+- Package the app as a Docker image and upload it to Docker Hub.
+- Pull the uploaded image to the build farm as a Background Task. [Check out more about background tasks here](google.com)
+- Run an integration test against the sample app.
+
