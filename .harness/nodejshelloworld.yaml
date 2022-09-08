@@ -49,7 +49,7 @@ pipeline:
                       touch nodejsdockerfile
                       cat > nodejsdockerfile <<- EOM
                       FROM node:14
-                      WORKDIR /harness
+                      WORKDIR /nodejshelloworld
                       COPY package*.json index.js ./
                       RUN npm install
                       EXPOSE 8080
@@ -83,6 +83,9 @@ pipeline:
                     connectorRef: <+input>
                     image: <+input>
                     shell: Sh
+                    command: |-
+                      cd /nodejshelloworld
+                      node index.js
               - step:
                   type: Run
                   name: test connection to server
