@@ -6,7 +6,7 @@ This repository is a home for snippets of YAML code and a sample hello world ser
 [![Harness CI]()
 
 ## Layout
-========================
+
 The repository is broken up into four directories currently:
 
 **[Docs](#Intro)**<br>
