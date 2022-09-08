@@ -9,7 +9,7 @@ The repository is broken up into four directories currently:
 **[Docs](#Intro)**<br>
 **[Harness Sample YAML](#Requirements)**<br>
 **[Getting Started](#GettingStarted)**<br>
-**[Further Reading](docs/further_reading.md)**<br>
+**[Workflow](#Workflow)**<br>
 **[Build Instructions](docs/build.md)**<br>
 
 
