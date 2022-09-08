@@ -1,7 +1,6 @@
 FROM node:14
-WORKDIR /nodejshelloworld
-ADD nodejshelloworld /harness/
+WORKDIR /harness
 COPY package*.json index.js ./
-RUN npm express
+RUN npm install
 EXPOSE 8080
 CMD ["node", "index.js"]
