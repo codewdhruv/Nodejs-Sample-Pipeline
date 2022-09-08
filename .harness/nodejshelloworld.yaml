@@ -49,9 +49,9 @@ pipeline:
                       touch nodejsdockerfile
                       cat > nodejsdockerfile <<- EOM
                       FROM node:14
-                      WORKDIR /harness/nodejshelloworld
+                      WORKDIR /harness
                       COPY package*.json index.js ./
-                      RUN npm express
+                      RUN npm install
                       EXPOSE 8080
                       CMD ["node", "index.js"]
                       EOM
