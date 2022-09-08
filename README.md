@@ -27,6 +27,6 @@ You can use publicly-available code, images, and your Github and Docker Hub acco
 - Use a Kubernetes cluster build farm.
 - Build the code and run unit tests in the build farm.
 - Package the app as a Docker image and upload it to Docker Hub.
-- Pull the uploaded image to the build farm as a Background Task. [Check out more about background tasks here](google.com)
+- Pull the uploaded image to the build farm as a Background Task. Check out more about background tasks [here](google.com)
 - Run an integration test against the sample app.
 
