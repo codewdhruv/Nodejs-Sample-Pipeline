@@ -7,6 +7,7 @@ This repository is a home for snippets of YAML code and a sample hello world ser
 The repository is broken up into four directories currently:
 
 **[Tutorial](docs/tutorial.md)**<br>
+**[Requirements](docs/requirements.md)**<br>
 **[Harness Sample YAML](#Requirements)**<br>
 **[Getting Started](#GettingStarted)**<br>
 **[Workflow](#Workflow)**<br>
