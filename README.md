@@ -8,7 +8,7 @@ The repository is broken up into four directories currently:
 
 **[Tutorial](docs/tutorial.md)**<br>
 **[Requirements](docs/requirements.md)**<br>
-**[Harness Sample YAML](#Requirements)**<br>
+**[Harness Sample YAML](https://github.com/codewdhruv/Nodejs-Sample-Pipeline/tree/main/.harness)**<br>
 **[Getting Started](#GettingStarted)**<br>
 **[Workflow](#Workflow)**<br>
 **[Build Instructions](docs/build.md)**<br>
