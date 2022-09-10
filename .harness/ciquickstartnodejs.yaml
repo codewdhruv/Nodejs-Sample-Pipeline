@@ -64,6 +64,12 @@ pipeline:
                     repo: <+input>
                     tags:
                       - latest
+        strategy:
+          repeat:
+            items:
+              - 18-alpine3.15
+              - current-alpine3.15
+          maxConcurrency: 2
     - stage:
         name: integration test
         identifier: integration_test
