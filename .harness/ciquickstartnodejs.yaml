@@ -106,3 +106,9 @@ pipeline:
                           --url http://localhost:8080
 
                       echo "test sucessfull"
+        strategy:
+          repeat:
+            items:
+              - 18-alpine3.15
+              - current-alpine3.15
+          maxConcurrency: 2
