@@ -9,4 +9,4 @@
 - Networking: Outbound HTTPS for the Harness connection, and to connect to Docker Hub. Allow TCP port 22 for SSH.
 - Namespace: When you install the Harness Delegate, it will create the harness-delegate namespace. You'll use the same namespace for the build farm.
 - A Kubernetes service account with permission to create entities in the target namespace is required. The set of permissions should include list, get, create, and delete permissions. In general, the cluster-admin permission or namespace admin permission is enough.
-For more information, see User-Facing Roles from Kubernetes.
+For more information, see [User-Facing Roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) from Kubernetes.
