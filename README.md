@@ -4,7 +4,7 @@ This repository is a home for snippets of YAML code and a sample hello world ser
 
 ## Layout
 
-The repository is broken up into four directories currently:
+The repository is broken up into six directories currently:
 
 **[Tutorial](docs/tutorial.md)**<br>
 **[Requirements](docs/requirements.md)**<br>
