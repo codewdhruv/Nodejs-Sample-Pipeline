@@ -64,3 +64,39 @@ pipeline:
                     repo: <+input>
                     tags:
                       - latest
+    - stage:
+        name: integration test
+        identifier: integration_test
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            useFromStage: build_test_and_run
+          execution:
+            steps:
+              - step:
+                  type: Background
+                  name: nodejs server
+                  identifier: nodejs_server
+                  spec:
+                    connectorRef: <+input>
+                    image: <+input>
+                    shell: Sh
+                    command: |-
+                      cd /nodejshelloworld
+                      node index.js
+              - step:
+                  type: Run
+                  name: test connection to server
+                  identifier: test_connection_to_server
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: curlimages/curl:7.73.0
+                    shell: Sh
+                    command: |-
+                      sleep 10
+                      curl --request GET \
+                          --url http://localhost:8080
+
+                      echo "test sucessfull"
