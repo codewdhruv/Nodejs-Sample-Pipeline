@@ -31,10 +31,6 @@ You can use publicly-available code, images, and your Github and Docker Hub acco
 - Pull the uploaded image to the build farm as a Background Task. Check out more about background tasks [here](google.com)
 - Run an integration test against the sample app.
 
-## Setting up the Build Stage
+## Graphical Summary
 
-The first move towards releasing software is the build stage. Optimizing the build stage will accelerate the development workflow and cut down costs. This is where the specification is done for the end-to-end workflow for the build: the codebase to build, the infrastructure to build it, where to post the finished artifact, and any additional tasks (such as automated tests or validations).
-
-To run a build, a Build Stage needs to connect to the codebase, the build infrastructure, and the artifact repository.
-A Connector is a configurable object that connects to an external resource automatically.
-
+![alt text](https://files.helpdocs.io/i5nl071jo5/articles/x0d77ktjw8/1611599684642/image.png)
