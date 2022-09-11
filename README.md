@@ -34,3 +34,11 @@ You can use publicly-available code, images, and your Github and Docker Hub acco
 ## Graphical Summary
 
 ![alt text](https://files.helpdocs.io/i5nl071jo5/articles/x0d77ktjw8/1611599684642/image.png)
+
+## Docs
+
+- Pipeline Creation & Build Set-up
+- Configuring the infrastructure & setting up Build & Run Unit Test stage
+- Build & Push Image to Docker
+- Create Integration Stage
+- Execute the Pipeline
