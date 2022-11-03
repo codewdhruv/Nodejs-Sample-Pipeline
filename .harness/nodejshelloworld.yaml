@@ -24,18 +24,13 @@ pipeline:
                   name: install node modules
                   identifier: install_node_modules
                   spec:
-                    connectorRef: DhrubajyotiDocker
-                    image: node:14
                     shell: Sh
-                    command: |
-                      npm install
+                    command: npm install
               - step:
                   type: Run
                   name: create image
                   identifier: create_image
                   spec:
-                    connectorRef: DhrubajyotiDocker
-                    image: node:14
                     shell: Sh
                     command: |-
                       touch nodejsdockerfile
