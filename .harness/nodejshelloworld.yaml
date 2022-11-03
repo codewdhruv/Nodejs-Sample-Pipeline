@@ -17,14 +17,6 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          infrastructure:
-            type: KubernetesDirect
-            spec:
-              connectorRef: DhrubaDemoCI2
-              namespace: dhruba-demo-ci
-              automountServiceAccountToken: true
-              nodeSelector: {}
-              os: Linux
           execution:
             steps:
               - step:
@@ -65,6 +57,13 @@ pipeline:
                     repo: <+input>
                     tags:
                       - latest
+                    dockerfile: Dockerfile
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
     - stage:
         name: integration test
         identifier: integration_test
