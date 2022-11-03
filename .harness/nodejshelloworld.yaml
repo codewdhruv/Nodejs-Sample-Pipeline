@@ -34,7 +34,7 @@ pipeline:
                   name: create image
                   identifier: create_image
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: DhrubajyotiDocker
                     image: node:14
                     shell: Sh
                     command: |-
