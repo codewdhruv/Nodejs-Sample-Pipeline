@@ -24,7 +24,7 @@ pipeline:
                   name: install node modules
                   identifier: install_node_modules
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: DhrubajyotiDocker
                     image: node:14
                     shell: Sh
                     command: |
