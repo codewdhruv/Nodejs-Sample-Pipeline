@@ -78,7 +78,7 @@ pipeline:
                     image: <+input>
                     shell: Sh
                     command: |-
-                      cd /nodejshelloworld
+                      cd /nodejs-pipeline-samples
                       node index.js
               - step:
                   type: Run
