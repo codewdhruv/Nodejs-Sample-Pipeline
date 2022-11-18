@@ -90,5 +90,4 @@ pipeline:
                     shell: Sh
                     command: |-
                       sleep 10
-                      curl --request GET \
-                          --url http://localhost:8080
+                      curl nodejs_server:8080
