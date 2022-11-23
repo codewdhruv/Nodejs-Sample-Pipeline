@@ -96,3 +96,32 @@ pipeline:
                   strategy:
                     parallelism: 1
                     maxConcurrency: 2
+    - stage:
+        name: Mutation Test
+        identifier: Mutation_Test
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: install dependencies
+                  identifier: install_dependencies
+                  spec:
+                    shell: Sh
+                    command: npm ci --ignore-scripts
+              - step:
+                  type: Run
+                  name: run mutation test
+                  identifier: run_mutation_test
+                  spec:
+                    shell: Sh
+                    command: npm run testonly:mutate
