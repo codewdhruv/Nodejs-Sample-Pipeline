@@ -26,6 +26,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: npm install
+                  failureStrategies: []
               - step:
                   type: Run
                   name: create image
@@ -91,3 +92,7 @@ pipeline:
                     command: |-
                       sleep 10
                       curl nodejs_server:8080
+                  failureStrategies: []
+                  strategy:
+                    parallelism: 1
+                    maxConcurrency: 2
